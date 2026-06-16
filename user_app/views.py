@@ -4,8 +4,8 @@ from rest_framework.authtoken.models import Token
 from rest_framework import status
 # from rest_framework_simplejwt.tokens import RefreshToken
 
-from user_app.api.serializers import RegistrationSerializer
-from user_app import models
+from watchmate.user_app.api.serializers import RegistrationSerializer
+from watchmate.user_app import models
 
 
 @api_view(['POST',])

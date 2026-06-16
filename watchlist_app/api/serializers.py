@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from watchlist_app.models import WatchList, StreamPlatform, Review
+from watchmate.watchlist_app.models import WatchList, StreamPlatform, Review
 
 
 class ReviewSerializer(serializers.ModelSerializer):

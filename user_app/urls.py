@@ -2,7 +2,7 @@ from django.urls import path
 from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from user_app.views import registration_view, logout_view
+from watchmate.user_app.views import registration_view, logout_view
 
 
 urlpatterns = [
