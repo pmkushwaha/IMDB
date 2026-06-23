@@ -3,22 +3,23 @@ version: "3.9"
 services:
 
   postgres:
-    image: postgres:16
+    image: postgres:18
+
 
     container_name: watchmate-db
 
     restart: always
 
     environment:
-      POSTGRES_DB: watchmate
+      POSTGRES_DB:  postgres
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: admin
 
     ports:
       - "5432:5432"
 
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
 
   backend:
 
@@ -26,6 +27,8 @@ services:
       context: ./backend/watchmate
 
     container_name: watchmate-backend
+
+    restart: always
 
     env_file:
       - .env
@@ -43,6 +46,8 @@ services:
 
     container_name: watchmate-frontend
 
+    restart: always
+    
     ports:
       - "3000:80"
 
